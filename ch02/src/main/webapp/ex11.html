@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>태그 선택자</title>
+<style>
+input	{
+	background-color: #fff;
+	padding: 5px;
+	border: 2px solid #03cf5d;
+	outline: none;
+}
+
+input.focused { 
+	background-color: #e1e6f6 
+}
+</style>
+<script>
+function changeBackground(el, className) {
+	el.className = className;
+}
+</script>
+</head>
+<body>
+	<form>
+		<input 
+			onfocus='changeBackground(this, "focused")'
+			onblur='changeBackground(this, "")'
+			type="text"
+			placeholder='아이디' />	
+		<br/><br/>
+		<input
+			onfocus='changeBackground(this, "focused")'
+			onblur='changeBackground(this, "")'
+			type="password"
+			placeholder='비밀번호' />	
+	</form>
+</body>
+</html>
