@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>마진과 패딩</title>
+<style type="text/css">
+*	{ margin:0; padding: 0 }
+body {
+	font-family: "돋움", "맑은 고딕";
+	font-size: 0.8em;
+	color: #333;
+}
+
+.box1 {
+	border: 1px solid #666;
+	width: 300px;
+	background-color: #FFC;
+	
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	
+	padding: 10px 20px 30px 40px;  /* T R B L */
+	padding: 10px 20px 30px;         /* T (R,L) B */
+	padding: 10px 20px;                 /* (T,B) (R,L) */
+	padding: 10px;                        /* (T, R, B, L) */
+	
+	margin: 100px auto 300px auto;	
+	margin: 100px auto 300px;	
+	margin: 100px auto;	
+	
+}
+</style>
+<script>
+/*
+var i = 0;
+*/
+
+window.onload = function() {
+	var elDiv = document.getElementById("box");
+
+	elDiv.onclick = function() {
+		var intervalId = setInterval(function() {
+			var marginTop = parseInt(elDiv.style.marginTop);
+
+			if( marginTop < -80) {
+				clearInterval(intervalId);
+				return;
+			}
+			
+			marginTop = marginTop - 10;
+			elDiv.style.marginTop = marginTop + "px";
+			
+			console.log(marginTop);
+		}, 200);
+	}
+}
+
+</script>
+</head>
+
+<body>
+	<div id="box" class="box1" style="margin-top: 200px">
+		CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
+	</div>
+</body>
+</html>
