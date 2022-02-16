@@ -19,7 +19,6 @@ body {
 }
 .box1 {
 	border: 4px dashed;
-
 }
 .box2 {
 	border:4px dotted;
@@ -49,7 +48,23 @@ body {
 
 .box8 {
 	border: 4px solid;
-
+	
+	/* 12[3(속성) x 4(방향)]가지 속성, 방향, 컬러 스타일링을 할 수 있다.(예제: 그중에 3가지)*/
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: geen;
+	
+	/* 12가지 속성별 단축형 */
+	border-width: 1px 2px 3px 4px;			/* T R B L */
+	border-width: 1px 2px 3px;				/* T (R,L) B */
+	border-width: 1px 2px;						/* (T,B) (R,L) */
+	border-width: 1px;							/* (T,B, R,L) */
+	
+	border-style: dash dotted solid double;
+	border-color: red green blue black;
+	
+	/* 보통은 다음과 같은 방식을 사용한다.(4방향이 모두 width, color, style이 동일하다면....)  */
+	border: 1px solid #111; 
 }
 .box9 {
 	border: 4px none;
