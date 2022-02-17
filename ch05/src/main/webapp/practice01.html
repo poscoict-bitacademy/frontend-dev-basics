@@ -1,19 +1,15 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>테이블</title>
 <style type="text/css" media="screen">
-* {
-	margin: 0;
-	padding: 0
-}
+*		{ margin: 0; padding: 0 }
+body { font-family: '맑은 고딕' 돋움; font-size: 0.75em; color: #333 }
 
-body {
-	font-family: '맑은 고딕' 돋움;
-	font-size: 0.75em;
-	color: #333
-}
+.tbl-ex	{ margin:50px auto ; border: 1px solid #333; border-collapse: collapse }
+
+.tbl-ex th, .tbl-ex td { padding: 8px; border: 1px solid #333;  } 
 </style>
 </head>
 <body>
@@ -42,7 +38,7 @@ body {
 			<td>특정 HTML 태그에 종속된 클래스</td>
 			<td>IE4, FF1,Safari 1, 크롬 1,오페라 3.5, CSS1</td>
 		</tr>
-		<tr class="even">
+		<tr>
 			<td>#idname</td>
 			<td>아이디</td>
 			<td>아이디로 정의해준 HTML 태그</td>
@@ -54,7 +50,7 @@ body {
 			<td>특정 HTML 태그에 종속된 아이디</td>
 			<td>IE4, FF1,Safari 1, 크롬 1,오페라 3.5, CSS1</td>
 		</tr>
-		<tr class="even">
+		<tr>
 			<td>*</td>
 			<td>전체 선택</td>
 			<td>모든 HTML 태그에 적용</td>
