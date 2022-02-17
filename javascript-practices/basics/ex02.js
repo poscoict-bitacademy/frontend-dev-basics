@@ -26,7 +26,18 @@
 
 /*
 자바스크립트 객체를 구분하는 또 다른 방법
+1.  내장(Built-in, Naitve, Engine) 객체
+    자바스크립트 엔진 안에 미리 내장되어 있는 객체
+    Number, Boolean, Date, RegExp, ... : 생성자 함수
+    setTimeout, parseInt, ...          : 일반 함수
 
+2.  호스트 객체
+    자바스크립트 엔진이 입베드된 환경(호스트)의 객체
+    -   호스트 환경이 브라우저: document, location, XmlHttpRequest, window, ...
+    -   호스트 환경이 노드(node.js): os, http, fs, path, ...
+
+3.  사용자 객체
+    자바스크립트 렌진이 실행되면서 생성되는 객체들...
 */
 
 console.log("===기본타입(primitive, 원시)]=================");
@@ -87,6 +98,4 @@ console.log(s + s2);
 console.log("=== 원시타입도 메소드 호출이 가능하다? =================");
 console.log(b.valueOf());  // JSEngine안에서 new Boolean(b).valueOf();
 console.log(b2.valueOf());
-
-
 
