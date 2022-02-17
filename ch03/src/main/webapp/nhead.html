@@ -4,41 +4,94 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-*		{margin:0; padding:0 }
-body	{font-family: "맑은 고딕" 돋움; font-size: 0.75em; color: #333;}
+*		{ margin:0; padding:0 }
+body	{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
 
-.header	{
+.header {
 	width: 630px;
 	height: 100px;
-	margin:50px auto;
-	background-color: #ddd;
+	margin: 50px auto;
 }
 
 .header .logo, .header .search-box {
-	float: left;
+	float: left
 }
 
 .header .logo {
 	font-size: 0;
+	overflow: hidden;
 	width: 222px;
 	height: 52px;
-	background: #fff url("/ch03/images/nsplite.png")  no-repeat 0 -158px / 457px 434px;
+	background: url('/ch03/images/nsplite.png') no-repeat 0 -158px / 440px 439px;
 }
 
 .search-box {
 	width: 400px;
-	height: 52px;
-	background-color: #ccc;
+	height: 50px;
+	margin-left: 20px;
+	border: 3px solid #19CE60;
+	width: 380px;
+	height: 45px;
 }
 
 .search-box input, .search-box a {
 	display: block;
-}  
+}
 
-.search-box input, .search-box .btn-search, .search-box  a {
+.search-box a, .search-box input, .search-box .btn-search {
 	float: right;
 }
 
+.search-box a, .btn-search button {
+	font-size: 0;
+}
+
+.search-box input {
+	float: left;
+	width: 260px;
+	padding: 13px 5px;
+	border: none;
+	font-size: 16px;
+	font-weight: bold;
+	outline: none;
+}
+
+.search-box #keyboard {
+	width: 20px;
+	height: 12px;
+	margin: 15px 10px 0 0;
+	background-image: url('/ch03/images/nsplite.png');
+	background-position: -300px -279px;
+	background-repeat: no-repeat;
+	background-size: 444px 439px;
+}
+
+.search-box #dropdown {
+	width: 10px;
+	height: 5px;
+	margin: 20px 10px 0 0;
+	background-image: url('/ch03/images/nsplite.png');
+	background-position: -96px -296px;
+	background-repeat: no-repeat;
+	background-size: 443px 439px;
+}
+
+.search-box .btn-search {
+	width: 45px;
+	height: 45px;
+	background-color: #19CE60;
+}
+
+.search-box .btn-search button {
+	display: block;
+	border: none;
+	width: 22px;
+	height: 22px;
+	display: block;
+	margin: 10px auto;
+	background: #19CE60 url('/ch03/images/nsplite.png') no-repeat -418px -208px;
+	background-size: 443px 439px;
+}
 </style>
 </head>
 <body>
@@ -48,8 +101,8 @@ body	{font-family: "맑은 고딕" 돋움; font-size: 0.75em; color: #333;}
 			<div class="btn-search">
 				<button>돋보기</button>
 			</div>
-			<a href="#"  id="dropdown">드롭다운</a> <a href="#"  id="keyboard">키보드</a>
-			<input type='text' />
+			<a href="#" id="dropdown">드롭다운</a> <a href="#" id="keyboard">키보드</a>
+			<input type="text" />
 		</div>
 	</div>
 </body>
