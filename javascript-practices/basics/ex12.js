@@ -19,7 +19,7 @@ Array.prototype.insert = function(index, value) {
         // value.forEach(function(e){
         //    _this.splice(index++, 0, e);
         // });
-  
+        
         // 해결 방법2: 함수의 bind로 함수 실행 때의 this를 세팅 해줄 수 있다.
         value.forEach(function(e){
             this.splice(index++, 0, e);
