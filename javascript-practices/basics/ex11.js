@@ -1,5 +1,5 @@
 /**
- * Array 메소드(Array.prototype)
+ * Array 객체 메소드(Array.prototype.*)
  */
 
 var colors = ['black', 'white', 'yellow'];
