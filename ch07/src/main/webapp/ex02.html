@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="jquery/jquery-3.6.0.js"></script>
+<script>
+// jQuery는 DOM의 엘리먼트를 선택하는 작업을 보통 먼저 하기 때문에
+// DOM이 로딩된 후에 작성하는 것이 보통이다.
+
+//1. DOM이 로딩된 시점: DOM API를 사용
+window.addEventListener('load', function(){
+	var $obj = $("#header");
+	console.log($obj.length);
+});
+
+//2. DOM이 로딩된 시점: jQuery 함수를 사용하는 방법1
+$(document).ready(function(){
+	var $obj = $("#header");
+	console.log($obj.length);
+});
+
+//3. DOM이 로딩된 시점: jQuery 함수를 사용하는 방법2
+$(function(){
+	var $obj = $("#header");
+	
+	// jQuery 객체는 절대 null이 아니다.
+	// if($obj != null) {                 x
+	//	console.log("success!!");      x
+	// }                                      x 
+	
+	console.log($obj[0]);	
+})
+
+
+</script>
+</head>
+<body>
+	<h1 id="header">jQuery 함수로 HTMLElement를 선택하는 시점</h1>
+</body>
+</html>
+ 
