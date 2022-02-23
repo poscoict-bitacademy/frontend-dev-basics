@@ -3,6 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.addEventListener("load", function(){
+	var imgElement = document.createElement('img');
+	
+	// 속성(attribute)을 읽기/쓰기 위해서 setAttribute/getAttribute 를 사용한다. 
+	imgElement.setAttribute('src', 'https://fictionhorizon.com/wp-content/uploads/2021/10/Luffy-Confused-Face-Cropped.jpg');
+	imgElement.setAttribute('style', 'width: 200px');
+	imgElement.setAttribute('alt', "루피~");
+	imgElement.setAttribute('title', "루피만세!!!!!!");
+	
+	imgElement['no'] = 10;											// property
+	imgElement.setAttribute('data-name', 'kickscar');		// 비표준 속성 사용시 data- prefix를 달아준다.
+	
+	setTimeout(function(){
+		document.body.appendChild(imgElement);
+		console.log(imgElement['no'] /*property*/, imgElement.getAttribute('no') /* attribute */);
+		console.log(imgElement.alt, imgElement['data-name']);
+	}, 2000);
+});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>

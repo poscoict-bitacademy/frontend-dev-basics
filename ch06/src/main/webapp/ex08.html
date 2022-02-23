@@ -3,6 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.addEventListener("load", function(){
+	var imgElement = document.createElement('img');
+	imgElement.src='https://fictionhorizon.com/wp-content/uploads/2021/10/Luffy-Confused-Face-Cropped.jpg';
+	imgElement.style.width = "200px";
+	imgElement.alt = "루피~";
+	imgElement.title = "루피만세!!!!!!";
+	
+	setTimeout(function(){
+		document.body.appendChild(imgElement);
+	}, 2000);
+});
+</script>
 </head>
 <body>
 	<h1 id='h' data-no='10'>DOM(Document Object Model)</h1>

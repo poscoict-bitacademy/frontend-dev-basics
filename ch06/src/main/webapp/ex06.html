@@ -3,6 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.addEventListener("load", function(){
+	var h3Element = document.createElement("h3");
+	var textNode = document.createTextNode("Hello DOM");
+	
+	h3Element.append(textNode);
+	
+	setTimeout(function(){
+		document.body.appendChild(h3Element);
+	}, 2000);
+	
+});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>
