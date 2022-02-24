@@ -6,6 +6,18 @@
 <script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
 <script type="text/javascript">
 $(function() {
+	$(window).scroll(function(){
+		var $window = $(this);
+		var $document = $(document);
+		
+		var windowHeight = $window.height(); 
+		var documentHeight = $document.height();
+		var scrollTop = $window.scrollTop();
+		
+		if(scrollTop + windowHeight + 10 > documentHeight) {
+			console.log("fetch() call");
+		}
+	});
 });  
 </script>
 </head>
