@@ -6,12 +6,14 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$("ul li:first-child").css('color', 'red');
+		$("ul li:last-child").css('color', 'blue');
 	}, 1000);
 });
 </script>
 </head>
 <body>
-	<h1>선택자 - 첫번째 자식</h1>
+	<h1>선택자 - 첫번째/마지막 자식</h1>
 	<ul>
 		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
 		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
