@@ -6,13 +6,14 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		var html = "<strong>" + "가나다라" + "</strong>";
+		$("#p1").prepend(html);
 	}, 1000);
 });
 </script>
 </head>
 <body>
-	<h1>DOM 조작 API - prepend()</h1>
-	
+	<h1>DOM 조작 API - prepend() : 생성</h1>	
 	<p id="p1">
 		마바사아자차카타파하
 	</p>
