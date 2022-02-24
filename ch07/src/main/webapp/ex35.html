@@ -4,19 +4,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script>
 <script type="text/javascript">
-/* jquery plug in */
+/* jquery plug-in hello*/
+$.fn.hello = function() {
+	console.log("Hello World");
+	console.log(this.length);		// 1
+	console.log(this.attr('title'));	// header
+	return this;
+}
+
+$.fn.flash = function() {
+	var _this = this;
+	var isBlink = false;
+	
+	setInterval(function(){
+		_this.css('background-color', isBlink ? '#f00' : '#fff');
+		isBlink = !isBlink;
+	}, 1000);	
+}
+
+/* test */
 $(function() {
-	$('h1').flash();
 	$("#btn").click(function(){
-		$(this)
-			.hello()
-			.flash();
+		$(this).hello();
+		$('h1').flash();	
 	});
 });  
 </script>
 </head>
 <body>
-	<h1>jQuery Plug In</h1>
+	<h1>jQuery Plug-In</h1>
 	<div style='width:200px; margin: 50px auto'>
 		<button id='btn' title='click me'>click me</button>
 	</div>
