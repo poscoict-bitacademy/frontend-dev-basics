@@ -25,7 +25,7 @@ var imageViewer = {
 			// 1. 타이머 시작
 			this._intervalId = setInterval(function(){
 				this._changeImage();
-			}.bind(this), 1000);
+			}.bind(this), 500);
 			
 			
 			// 2. 버튼텍스트 => 슬라이드쇼 중지 
