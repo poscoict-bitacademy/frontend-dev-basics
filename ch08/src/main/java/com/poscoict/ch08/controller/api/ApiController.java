@@ -1,6 +1,7 @@
 package com.poscoict.ch08.controller.api;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,6 +32,30 @@ public class ApiController {
 		vo.setNo(1L);
 		vo.setName("둘리");
 		vo.setMessage("호이~");
+		
+		return JsonResult.success(vo);
+	}
+
+	@ResponseBody
+	@RequestMapping(value="/post01", method=RequestMethod.POST)
+	public JsonResult post01(GuestbookVo vo) {
+		System.out.println(vo);
+		
+		// service -> respository: DB insert 성공한 후,
+		vo.setNo(1L);
+		vo.setPassword("");
+		
+		return JsonResult.success(vo);
+	}
+
+	@ResponseBody
+	@RequestMapping(value="/post02", method=RequestMethod.POST)
+	public JsonResult post02(@RequestBody GuestbookVo vo) {
+		System.out.println(vo);
+		
+		// service -> respository: DB insert 성공한 후,
+		vo.setNo(1L);
+		vo.setPassword("");
 		
 		return JsonResult.success(vo);
 	}
