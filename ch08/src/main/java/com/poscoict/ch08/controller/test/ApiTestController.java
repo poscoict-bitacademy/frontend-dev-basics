@@ -3,9 +3,9 @@ package com.poscoict.ch08.controller.test;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller("apiTestController")
+@Controller
 @RequestMapping("/test")
-public class ApiController {
+public class ApiTestController {
 
 	@RequestMapping("/text")
 	public String text() {
