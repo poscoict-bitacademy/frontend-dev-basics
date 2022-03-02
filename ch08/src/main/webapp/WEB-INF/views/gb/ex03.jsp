@@ -33,13 +33,11 @@ var fetch = function() {
 				console.error(response.message);
 				return;
 			}
-			
 
 			for(var i = 0; i < response.data.length; i++) {
 				var vo = response.data[i];
 				var html = render(vo);
 				$("#list-guestbook").append(html);
-				startNo  = response.data[i].no;
 			}
 		}
 	});	
@@ -49,12 +47,59 @@ $(function() {
 	// ..
 	// ..
 	// 삭제 다이알로그 객체 만들기
-	var dialogDelete = $("dialog-delete-form").dialog({
+	var dialogDelete = $("#dialog-delete-form").dialog({
 		autoOpen: false,
-		modal: true
+		modal: true,
+		buttons: {
+			"삭제": function() {
+				var no = $("#hidden-no").val();
+				var password = $("#password-delete").val();
+				var url = "${pageContext.request.contextPath }/api/guestbook/delete/" + no;
+				
+				$.ajax({
+					url: url,
+					type: 'post',
+					dataType: 'json',
+					data: "password=" + password,
+					success: function(response) {
+						if(response.result !== 'success') {
+							console.error(response.message);
+							return;
+						}
+						
+						if(response.data == -1) {
+							$(".validateTips.error").show();
+							$("#password-delete").val("").focus();
+							return;
+						}
+						
+						// 삭제가 된 경우
+						$("#list-guestbook li[data-no='"   +  response.data + "']").remove();
+						dialogDelete.dialog('close');
+					}
+				});
+			},
+			"취소": function() {
+				$(this).dialog('close');
+			}
+		},
+		close: function() {
+			$(".validateTips.error").hide();
+
+			$("#password-delete").val("");
+			$("#hidden-no").val("");
+		}
 	});
 	
-
+	// 글삭제 버튼 Click 이벤트 처리(Live Event)
+	$(document).on('click', "#list-guestbook li a", function(event) {
+		event.preventDefault();
+		
+		var no = $(this).data("no");
+		$("#hidden-no").val(no);
+		dialogDelete.dialog('open');
+	});
+	
 	// 최초 리스트 가져오기
 	fetch();
 });
