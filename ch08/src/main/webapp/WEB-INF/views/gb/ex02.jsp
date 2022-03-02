@@ -37,8 +37,7 @@ var fetch = function() {
 				var vo = response.data[i];
 				var html = render(vo);
 				$("#list-guestbook").append(html);
-				startNo  = response.data[i].no;
-			}
+				
 		}
 	});	
 }
