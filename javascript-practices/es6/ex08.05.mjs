@@ -15,6 +15,6 @@ const divide = function(a, b) {
     return a / b;
 }
 
-export {add, subtract,divide}
+export {add, subtract, divide}
 
 export default {add, subtract}
